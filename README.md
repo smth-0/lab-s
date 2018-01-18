@@ -1,3 +1,2 @@
-# lab-sHi, there
-Hi, there
-Hi m8
+# lab-s
+so, it's a our first repository.
