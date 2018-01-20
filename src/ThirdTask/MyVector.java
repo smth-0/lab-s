@@ -15,17 +15,42 @@ public class MyVector extends MyCollection {
 
     @Override
     public void add(int element) {
-        //
+        int tmp[] = new int[0];
+        for(int i=0;i<array.length;i++){
+            tmp[i]=array[i];
+            array[i]=0;
+        }
+        tmp[tmp.length]=element;
+        for(int i=0;i<tmp.length;i++){
+            array[i]=tmp[i];
+        }
     }
 
     @Override
     public void add(int index, int element) {
-        //
+        int tmp[] = new int[0];
+        int i;
+
+        for(i=0;i<index;i++){
+            tmp[i]=array[i];
+            array[i]=0;
+        }
+        tmp[index]=element;
+        i++;
+        for(i=0;i<array.length+1;i++){
+            tmp[i]=array[i-1];
+            array[i-1]=0;
+        }
+        for(i=0;i<array.length+1;i++){
+            array[i]=tmp[i];
+        }
     }
 
     @Override
     public void clear() {
-        //
+        for(int i=0;i<array.length+1;i++){
+            array[i]=0;
+        }
     }
 
     @Override
@@ -67,17 +92,57 @@ public class MyVector extends MyCollection {
 
     @Override
     public void removeAt(int index) {
-        //
+        int tmp[] = new int[0];
+        int i;
+        i = 0;
+        for(i=0;i<index;i++){
+            tmp[i]=array[i];
+            array[i]=0;
+        }
+        tmp[index]=0;
+        i++;
+        for(i=0;i<array.length+1;i++){
+            tmp[i]=array[i-1];
+            array[i-1]=0;
+        }
+        for(i=0;i<array.length+1;i++){
+            array[i]=tmp[i];
+        }
     }
 
     @Override
     public void remove(int element) {
-        //
+        int tmp[] = new int[0];
+        int i=0;
+        boolean trigger=false;
+        for(i=0;i<array.length;i++){
+            if(array[i]==element&& !trigger) {
+                trigger=true;
+            }else {
+                tmp[i]=array[i];
+            }
+            array[i]=0;
+        }
+        for(i=0;i<array.length+1;i++){
+            array[i]=tmp[i];
+        }
     }
 
     @Override
     public void removeAll(int element) {
-        //
+        int tmp[] = new int[0];
+        int i;
+        int pos=0;
+        for(i=0;i<array.length;i++){
+            if(array[i]!=element) {
+                tmp[pos]=array[i];
+                pos++;
+            }
+
+        }
+        for(i=0;i<tmp.length;i++){
+            array[i]=tmp[i];
+        }
     }
 
     @Override

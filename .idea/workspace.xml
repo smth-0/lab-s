@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6cc4510-512b-4c5e-9b99-67b1050634d5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/FirstTask/Parallel.java" afterPath="$PROJECT_DIR$/src/FirstTask/Parallel.java" />
-      <change beforePath="$PROJECT_DIR$/src/FirstTask/Resistor.java" afterPath="$PROJECT_DIR$/src/FirstTask/Resistor.java" />
-      <change beforePath="$PROJECT_DIR$/src/FirstTask/Series.java" afterPath="$PROJECT_DIR$/src/FirstTask/Series.java" />
-      <change beforePath="$PROJECT_DIR$/src/SecondTask/Account.java" afterPath="$PROJECT_DIR$/src/SecondTask/Account.java" />
       <change beforePath="$PROJECT_DIR$/src/ThirdTask/MyVector.java" afterPath="$PROJECT_DIR$/src/ThirdTask/MyVector.java" />
     </list>
     <ignored path="java.iws" />
@@ -26,7 +22,31 @@
     <favorites_list name="java" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf>
+      <file leaf-file-name="MyVector.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ThirdTask/MyVector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+              <folding>
+                <element signature="e#139#140#0" expanded="true" />
+                <element signature="e#169#170#0" expanded="true" />
+                <element signature="e#1292#1293#0" expanded="true" />
+                <element signature="e#1327#1328#0" expanded="true" />
+                <element signature="e#3279#3280#0" expanded="true" />
+                <element signature="e#3317#3318#0" expanded="true" />
+                <element signature="e#3356#3357#0" expanded="true" />
+                <element signature="e#3391#3392#0" expanded="true" />
+                <element signature="e#3790#3791#0" expanded="true" />
+                <element signature="e#3818#3819#0" expanded="true" />
+                <element signature="e#3864#3865#0" expanded="true" />
+                <element signature="e#3903#3904#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,10 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,6 +137,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,11 +418,19 @@
       <option name="project" value="LOCAL" />
       <updated>1516283089615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added code, patch's and fix's.&#10;fixed fields after merging.&#10;was commented errors.">
+      <created>1516430063873</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1516430063873</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="259" y="107" width="1536" height="901" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -416,7 +444,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15921053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15921053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -437,7 +465,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added problem 1" />
     <MESSAGE value="added method IntToString" />
-    <option name="LAST_COMMIT_MESSAGE" value="added method IntToString" />
+    <MESSAGE value="added code, patch's and fix's.&#10;fixed fields after merging.&#10;was commented errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="added code, patch's and fix's.&#10;fixed fields after merging.&#10;was commented errors." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -449,8 +478,8 @@
         <state relative-caret-position="34">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
-            <element signature="e#62#63#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#62#63#0" expanded="false" />
+            <element signature="e#105#106#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -468,8 +497,8 @@
         <state relative-caret-position="17">
           <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding>
-            <element signature="e#62#63#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#62#63#0" expanded="false" />
+            <element signature="e#105#106#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,7 +610,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="78" column="13" lean-forward="true" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#1292#1293#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#3279#3280#0" expanded="true" />
+            <element signature="e#3317#3318#0" expanded="true" />
+            <element signature="e#3356#3357#0" expanded="true" />
+            <element signature="e#3391#3392#0" expanded="true" />
+            <element signature="e#3790#3791#0" expanded="true" />
+            <element signature="e#3818#3819#0" expanded="true" />
+            <element signature="e#3864#3865#0" expanded="true" />
+            <element signature="e#3903#3904#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -598,8 +640,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#62#63#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#62#63#0" expanded="false" />
+            <element signature="e#105#106#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,8 +651,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#62#63#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#62#63#0" expanded="false" />
+            <element signature="e#105#106#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,8 +669,8 @@
         <state relative-caret-position="42">
           <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding>
-            <element signature="e#62#63#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#62#63#0" expanded="false" />
+            <element signature="e#105#106#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -639,8 +681,8 @@
         <state relative-caret-position="34">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
-            <element signature="e#62#63#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#62#63#0" expanded="false" />
+            <element signature="e#105#106#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -766,9 +808,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirdTask/MyVector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="124" column="0" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="24">
+          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#1292#1293#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#3279#3280#0" expanded="true" />
+            <element signature="e#3317#3318#0" expanded="true" />
+            <element signature="e#3356#3357#0" expanded="true" />
+            <element signature="e#3391#3392#0" expanded="true" />
+            <element signature="e#3790#3791#0" expanded="true" />
+            <element signature="e#3818#3819#0" expanded="true" />
+            <element signature="e#3864#3865#0" expanded="true" />
+            <element signature="e#3903#3904#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
