@@ -1,5 +1,7 @@
 package ThirdTask;
 
+import java.util.Arrays;
+
 public class MyVector extends MyCollection {
 
     private int[] array;
@@ -37,7 +39,7 @@ public class MyVector extends MyCollection {
         }
         tmp[index]=element;
         i++;
-        for(i=0;i<array.length+1;i++){
+        for(;i<array.length+1;i++){
             tmp[i]=array[i-1];
             array[i-1]=0;
         }
@@ -55,8 +57,8 @@ public class MyVector extends MyCollection {
 
     @Override
     public boolean contains(int o) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == o) {
+        for (int anArray : array) {
+            if (anArray == o) {
                 return true;
             }
         }
@@ -85,23 +87,20 @@ public class MyVector extends MyCollection {
 
     @Override
     public boolean isEmpty() {
-        if (array.length == 0) {
-            return true;
-        } else return false;
+        return array.length == 0;
     }
 
     @Override
     public void removeAt(int index) {
         int tmp[] = new int[0];
         int i;
-        i = 0;
         for(i=0;i<index;i++){
             tmp[i]=array[i];
             array[i]=0;
         }
         tmp[index]=0;
         i++;
-        for(i=0;i<array.length+1;i++){
+        for(;i<array.length+1;i++){
             tmp[i]=array[i-1];
             array[i-1]=0;
         }
@@ -113,7 +112,7 @@ public class MyVector extends MyCollection {
     @Override
     public void remove(int element) {
         int tmp[] = new int[0];
-        int i=0;
+        int i;
         boolean trigger=false;
         for(i=0;i<array.length;i++){
             if(array[i]==element&& !trigger) {
@@ -184,6 +183,6 @@ public class MyVector extends MyCollection {
 
     @Override
     public String toString() {
-        return array.toString();
+        return Arrays.toString(array);
     }
 }
