@@ -4,11 +4,9 @@ import java.util.Arrays;
 
 public class MyVector extends MyCollection {
 
-    private int[] array;
+    private int[] array = new int[1];
 
-    MyVector() {
-
-    }
+    public MyVector() {}
 
     MyVector(int[] a) {
         this.array = a;
@@ -17,13 +15,13 @@ public class MyVector extends MyCollection {
 
     @Override
     public void add(int element) {
-        int tmp[] = new int[0];
+        int tmp[] = new int[array.length+1];
         for(int i=0;i<array.length;i++){
             tmp[i]=array[i];
             array[i]=0;
         }
-        tmp[tmp.length]=element;
-        System.arraycopy(tmp, 0, array, 0, tmp.length);
+        tmp[tmp.length-1]=element;
+        array=tmp;
     }
 
     @Override
