@@ -23,9 +23,7 @@ public class MyVector extends MyCollection {
             array[i]=0;
         }
         tmp[tmp.length]=element;
-        for(int i=0;i<tmp.length;i++){
-            array[i]=tmp[i];
-        }
+        System.arraycopy(tmp, 0, array, 0, tmp.length);
     }
 
     @Override
