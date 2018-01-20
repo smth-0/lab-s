@@ -27,17 +27,14 @@ public class Parallel extends Circuit {
         this.b = b;
     }
 
-    @Override
     public double getResistance() {
         return a.getResistance() * b.getResistance() / (a.getResistance() + b.getResistance());
     }
 
-    @Override
     public double getPotentialDiff() {
         return a.getPotentialDiff();
     }
 
-    @Override
     public void applyPotentialDiff(double V) {
         a.applyPotentialDiff(V);
         b.applyPotentialDiff(V);

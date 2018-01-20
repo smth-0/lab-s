@@ -2,11 +2,11 @@ package SecondTask;
 
 public class Account {
     private double balance;
-    private int accNumber;
+    private int id;
 
     public Account(int a) {
         balance = 0.0;
-        accNumber = a;
+        id = a;
     }
 
     public void deposit(double sum) {
@@ -22,7 +22,7 @@ public class Account {
     }
 
     public double getAccountNumber() {
-        return accNumber;
+        return id;
     }
 
     public void transfer(double amount, Account other) {
@@ -31,7 +31,7 @@ public class Account {
     }
 
     public String toString() {
-        return "Account number: " + accNumber +
+        return "Account number: " + id +
                 "Balance: " + balance;
     }
 

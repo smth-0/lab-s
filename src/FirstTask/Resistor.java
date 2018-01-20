@@ -1,7 +1,5 @@
 package FirstTask;
 
-import FirstTask.Circuit;
-
 public class Resistor extends Circuit {
     private double resistance;
     private double potentialDifference;

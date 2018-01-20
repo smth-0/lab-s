@@ -1,9 +1,5 @@
 package FirstTask;
 
-import FirstTask.Circuit;
-
-import java.util.Vector;
-
 public class Series extends Circuit {
     private Circuit a;
     private Circuit b;

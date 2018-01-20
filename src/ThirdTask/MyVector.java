@@ -15,17 +15,17 @@ public class MyVector extends MyCollection {
 
     @Override
     public void add(int element) {
-        /
+        //
     }
 
     @Override
     public void add(int index, int element) {
-        /
+        //
     }
 
     @Override
     public void clear() {
-        /
+        //
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MyVector extends MyCollection {
 
     @Override
     public void insertElementAt(int element, int index) {
-        /
+        //
     }
 
     @Override
@@ -67,17 +67,17 @@ public class MyVector extends MyCollection {
 
     @Override
     public void removeAt(int index) {
-        /
+        //
     }
 
     @Override
     public void remove(int element) {
-        /
+        //
     }
 
     @Override
     public void removeAll(int element) {
-        /
+        //
     }
 
     @Override
