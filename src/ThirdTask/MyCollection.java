@@ -1,7 +1,6 @@
 package ThirdTask;
 
 public abstract class MyCollection {
-
     public abstract void add(int element);
     public abstract void add(int index, int element);
     public abstract void clear();

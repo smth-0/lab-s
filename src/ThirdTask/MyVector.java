@@ -14,7 +14,7 @@ public class MyVector extends MyCollection {
 
 
     @Override
-    public void add(int element) {
+    public void add(int element) { // OK
         int tmp[]=new int[array.length+1];
         for(int i=0;i<array.length;i++){
             tmp[i]=array[i];
@@ -26,8 +26,8 @@ public class MyVector extends MyCollection {
 
     @Override
     public void add(int index, int element) {
-        int[] tmp = new int[array.length * 2];
-        index--;
+        int[] tmp = new int[array.length + 1];
+
         for (int i = 0; i < index; i++) {
             tmp[i] = array[i];
         }
@@ -45,12 +45,7 @@ public class MyVector extends MyCollection {
 
     @Override
     public boolean contains(int o) {
-        for(int i=0;i<array.length;i++){
-            if(array[i]==o){
-                return true;
-            }
-        }
-        return false;
+        return indexOf(o) != -1;
     }
 
     @Override
@@ -59,9 +54,7 @@ public class MyVector extends MyCollection {
     }
 
     @Override
-    public int indexOf(int o) {
-return 1;
-    }
+    public int indexOf(int o) {return 1;}
 
     @Override
     public void insertElementAt(int element, int index) {
@@ -75,7 +68,18 @@ return 1;
 
     @Override
     public void removeAt(int index) {
-        array[index-1]= Integer.parseInt(null);
+        int tmp[]=new int[array.length-1];
+        int i;
+
+        for(i=0;i<index;++i){
+            tmp[i]=array[i];
+        }
+
+        for(;i<array.length-1;++i){
+            tmp[i]=array[i+1];
+        }
+        array=new int[tmp.length];
+        array=tmp;
     }
 
     @Override
@@ -130,6 +134,10 @@ return 1;
                 }
             }
         }
+    }
+
+    public void mergeSort(){
+
     }
 
     @Override
