@@ -5,8 +5,15 @@ package ThirdTask;
  * in project lab-s.
  */
 public class Node {
-    Node next;
+    Node next=null;
     int value;
+
+    public Node(Node next){
+        this.next=next;
+    }
+    public Node(int value){
+        this.value=value;
+    }
 
     public Node getNext() {
         return next;
