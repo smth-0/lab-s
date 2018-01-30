@@ -17,5 +17,6 @@ public abstract class MyCollection {
     public abstract int size();
     public abstract void sort();
     public abstract int[] toArray();
+    public abstract void mergeSort();
     public abstract String toString();
 }
