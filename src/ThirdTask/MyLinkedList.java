@@ -32,6 +32,13 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public boolean contains(int o) {
+        Node tmp=head;
+        while (tmp==tail){
+            if(tmp.getValue()==o){
+                return true;
+            }
+            tmp=tmp.getNext();
+        }
         return false;
     }
 
@@ -45,22 +52,40 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public int indexOf(int o) {
-        return 0;
+        Node tmp=head;
+        int i=0;
+        while (tmp==tail){
+            if(tmp.getValue()==o){
+                return i;
+            }
+            tmp=tmp.getNext();
+            i++;
+        }
+        return -1;
     }
 
     @Override
     public void insertElementAt(int element, int index) {
-
+        add(element,index);
     }
 
     @Override
     public boolean isEmpty() {
+        if(head.getValue()==0||head.getNext()==null){
+            return true;
+        }
         return false;
     }
 
     @Override
     public void removeAt(int index) {
+        Node tmp=head;
+        for(int i=0;i<index;i++){
+            tmp=tmp.getNext();
+        }
+        tmp=tmp.getNext().getNext();
 
+        return;
     }
 
     @Override
