@@ -1,16 +1,22 @@
 package ThirdTask;
+import java.util.LinkedList;
 
 public class MyLinkedList extends MyCollection {
-    Node head, tail;
+    Node head= new Node(), tail= new Node();
 
     public void add(int value) {
-        Node n = new Node(value);
 
-        if (tail == null) tail = n;
-        else {
-            tail.next = n;
-            tail = n;
+        if(head.value==0){
+            head.value=value;
+            head.next=tail;
+            return;
         }
+        if(head.next==tail){
+            Node n = new Node(value);
+
+        }
+
+
     }
 
     public void add(int value, int position){
@@ -26,8 +32,8 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public void clear() {
-        head.next= new Node();
-        tail.value= 0;
+        head= new Node();
+        tail= new Node();
     }
 
     @Override
@@ -45,7 +51,11 @@ public class MyLinkedList extends MyCollection {
     public int get(int position){
         Node tmp=head;
         for(int i=0;i<position;i++){
-            tmp=tmp.getNext();
+            if(tmp.getNext()!=null) {
+                tmp = tmp.getNext();
+            }else {
+                return 0;
+            }
         }
         return tmp.getValue();
     }
@@ -71,7 +81,9 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public boolean isEmpty() {
-        if(head.getValue()==0||head.getNext()==null){
+        if (head.next==null) {
+            return true;
+        } else if (head.getValue() == 0) {
             return true;
         }
         return false;
@@ -130,7 +142,9 @@ public class MyLinkedList extends MyCollection {
         Node tmp=head;
         int i;
         for(i=0;;i++){
-            tmp=tmp.getNext();
+            if(tmp.getNext()!=null) {
+                tmp = tmp.getNext();
+            }else return 0;
             if(tmp==tail)break;
         }
         return i;
@@ -143,7 +157,7 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public int[] toArray() {
-        int[] array=new int[size()];
+        int[] array=new int[size()+1];
         Node tmp=head;
         for(int i=0;i<size();i++){
             tmp=tmp.getNext();
@@ -160,12 +174,13 @@ public class MyLinkedList extends MyCollection {
     @Override
     public String toString() {
         Node tmp=head;
-        String str="[";
+        String str=new String();
+        str+="[";
         for(int i=0;i<size();i++){
             tmp=tmp.getNext();
-            str+=tmp.getValue()+", ";
+            str+=tmp.value+", ";
         }
-        return str+"]";
+        return str;
     }
 
 }
