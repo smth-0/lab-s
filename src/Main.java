@@ -1,17 +1,21 @@
 import ThirdTask.MyCollection;
+import ThirdTask.MyLinkedList;
 import ThirdTask.MyVector;
 
 public class Main {
     public static void main(String args[]){
-        MyCollection v = new MyVector();
+        MyCollection ll= new MyLinkedList();
+        ll.add(1);
+        ll.clear();
+        ll.add(2);
+        ll.add(3);
+        ll.add(4);
 
+        System.out.println(ll.isEmpty());
+        System.out.println(ll.contains(3));
+        System.out.println(ll.toArray());
+        System.out.println(ll.toString());
+        System.out.println(ll.get(2));
 
-        v.add(1);
-        v.add(5);
-        v.add(4);
-        v.add(9);
-        v.add(2);
-
-        v.mergeSort();
     }
 }

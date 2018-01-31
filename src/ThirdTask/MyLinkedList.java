@@ -26,8 +26,8 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public void clear() {
-        head.next=null;
-        tail.value= Integer.parseInt(null);
+        head.next= new Node();
+        tail.value= 0;
     }
 
     @Override
@@ -79,22 +79,36 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public void removeAt(int index) {
-        Node tmp=head;
-        for(int i=0;i<index;i++){
-            tmp=tmp.getNext();
-        }
-        tmp=tmp.getNext().getNext();
+//        Node tmp=head;
+//        for(int i=0;i<index;i++){
+//            tmp=tmp.getNext();
+//        }
+//        tmp=tmp.getNext().getNext();
 
 
     }
 
     @Override
     public void remove(int element) {
-
+        Node tmp=head;
+        boolean trgr=false;
+        for(int i=0;i!=size();i++){
+            if(tmp.getValue()==element&&!trgr){
+                trgr=true;
+                removeAt(i);
+            }
+        }
     }
 
     @Override
     public void removeAll(int element) {
+        Node tmp=head;
+
+        for(int i=0;i!=size();i++){
+            if(tmp.getValue()==element){
+                removeAt(i);
+            }
+        }
 
     }
 
@@ -113,7 +127,13 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public int size() {
-        return 0;
+        Node tmp=head;
+        int i;
+        for(i=0;;i++){
+            tmp=tmp.getNext();
+            if(tmp==tail)break;
+        }
+        return i;
     }
 
     @Override
@@ -123,7 +143,13 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public int[] toArray() {
-        return new int[0];
+        int[] array=new int[size()];
+        Node tmp=head;
+        for(int i=0;i<size();i++){
+            tmp=tmp.getNext();
+            array[i]=tmp.getValue();
+        }
+        return array;
     }
 
     @Override
@@ -133,7 +159,13 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public String toString() {
-        return null;
+        Node tmp=head;
+        String str="[";
+        for(int i=0;i<size();i++){
+            tmp=tmp.getNext();
+            str+=tmp.getValue()+", ";
+        }
+        return str+"]";
     }
 
 }
