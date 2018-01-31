@@ -85,7 +85,7 @@ public class MyLinkedList extends MyCollection {
         }
         tmp=tmp.getNext().getNext();
 
-        return;
+
     }
 
     @Override
