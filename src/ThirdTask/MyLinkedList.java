@@ -1,5 +1,4 @@
 package ThirdTask;
-import java.util.LinkedList;
 
 public class MyLinkedList extends MyCollection {
     Node head= new Node(), tail= new Node();
@@ -9,10 +8,9 @@ public class MyLinkedList extends MyCollection {
         if(head.value==0){
             head.value=value;
             head.next=tail;
-            return;
         }
-        if(head.next==tail){
-            Node n = new Node(value);
+        else{
+            add(value,size());
 
         }
 
@@ -39,7 +37,10 @@ public class MyLinkedList extends MyCollection {
     @Override
     public boolean contains(int o) {
         Node tmp=head;
-        while (tmp==tail){
+
+        if(head.next==null)return false;
+
+        while (tmp!=tail){
             if(tmp.getValue()==o){
                 return true;
             }
@@ -64,7 +65,7 @@ public class MyLinkedList extends MyCollection {
     public int indexOf(int o) {
         Node tmp=head;
         int i=0;
-        while (tmp==tail){
+        while (tmp!=tail){
             if(tmp.getValue()==o){
                 return i;
             }
@@ -160,8 +161,8 @@ public class MyLinkedList extends MyCollection {
         int[] array=new int[size()+1];
         Node tmp=head;
         for(int i=0;i<size();i++){
-            tmp=tmp.getNext();
             array[i]=tmp.getValue();
+            tmp=tmp.getNext();
         }
         return array;
     }
@@ -176,11 +177,16 @@ public class MyLinkedList extends MyCollection {
         Node tmp=head;
         String str=new String();
         str+="[";
-        for(int i=0;i<size();i++){
+        for(int i=0;i<=size();i++){
+            str+=tmp.value;
             tmp=tmp.getNext();
-            str+=tmp.value+", ";
+
+            if(i!=size())str+=", ";
         }
-        return str;
+        return str+"]";
     }
 
+    public void swap(int position1, int position2){
+        Node tmp=get(position1);
+    }
 }
