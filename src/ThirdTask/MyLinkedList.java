@@ -1,77 +1,71 @@
 package ThirdTask;
 
 public class MyLinkedList extends MyCollection {
-    Node head= new Node(), tail= new Node();
+    Node head = null, tail = null;
 
     public void add(int value) {
-
-        if(head.value==0){
-            head.value=value;
-            head.next=tail;
+        if (tail == null) {
+            head = tail = new Node(value);
+        } else {
+            Node n = new Node(value);
+            tail.setNext(n);
+            n.setPrev(tail);
+            tail = n;
         }
-        else{
-            add(value,size());
-
-        }
-
-
     }
 
-    public void add(int value, int position){
-        Node tmp=head;
-        for(int i=0;i<position;i++){
-            tmp=tmp.getNext();
+    @Override
+    public void add(int index, int element) {
+        Node n = new Node(element);
+        if (index == 0) {
+            n.setNext(head);
+            head.setPrev(n);
+            head = n;
+            if (n.getNext() == null)
+                tail = n;
+        } else {
+            Node tmp = getOnPosition(index);
+            n.setNext(tmp.getNext());
+            tmp.getNext().setPrev(n);
+            tmp.setNext(n);
         }
+    }
 
-        Node n = new Node(value);
-        n.next = tmp.next;
-        tmp.next = n;
+    private Node getOnPosition(int position) {
+        if (position == 0) return head;
+        Node cur = head;
+        for (int i = 0; i < position; ++i) {
+            cur = cur.getNext();
+        }
+        if (cur.getPrev() == null) return cur;
+        return cur.getPrev();
     }
 
     @Override
     public void clear() {
-        head= new Node();
-        tail= new Node();
+        head = tail = null;
     }
 
     @Override
     public boolean contains(int o) {
-        Node tmp=head;
-
-        if(head.next==null)return false;
-
-        while (tmp!=tail){
-            if(tmp.getValue()==o){
-                return true;
-            }
-            tmp=tmp.getNext();
-        }
-        return false;
+        return indexOf(o) != -1;
     }
 
     public int get(int position){
-        Node tmp=head;
-        for(int i=0;i<position;i++){
-            if(tmp.getNext()!=null) {
-                tmp = tmp.getNext();
-            }else {
-                return 0;
-            }
-        }
-        return tmp.getValue();
+        return getOnPosition(position).getValue();
     }
 
     @Override
     public int indexOf(int o) {
         Node tmp=head;
-        int i=0;
-        while (tmp!=tail){
+        int i = 1;
+        do {
             if(tmp.getValue()==o){
                 return i;
             }
             tmp=tmp.getNext();
             i++;
-        }
+        } while (tmp != tail);
         return -1;
     }
 
@@ -82,71 +76,91 @@ public class MyLinkedList extends MyCollection {
 
     @Override
     public boolean isEmpty() {
-        if (head.next==null) {
-            return true;
-        } else if (head.getValue() == 0) {
-            return true;
-        }
-        return false;
+        return head == null;
     }
 
     @Override
     public void removeAt(int index) {
-//        Node tmp=head;
-//        for(int i=0;i<index;i++){
-//            tmp=tmp.getNext();
-//        }
-//        tmp=tmp.getNext().getNext();
+        if (index == 0) {
+            head = (head.getNext());
+            head.setPrev(null);
+        } else {
+            Node n = getOnPosition(index);
 
-
+            // if (n.getPrev() !=  null) {
+                n.getPrev().setNext(n.getNext());
+                n.getNext().setPrev(n.getPrev());
+            // } else {
+            //    head = head.getNext();
+            // }
+        }
     }
 
     @Override
     public void remove(int element) {
         Node tmp=head;
-        boolean trgr=false;
-        for(int i=0;i!=size();i++){
-            if(tmp.getValue()==element&&!trgr){
-                trgr=true;
+        int i = 1;
+        do {
+            if(tmp.getValue() == element){
                 removeAt(i);
+                break;
             }
-        }
+            ++i;
+        } while (tmp != tail);
     }
 
     @Override
     public void removeAll(int element) {
-        Node tmp=head;
+        do
+            if (head.getValue() == element) {
+                head = head.getNext();
+                head.setPrev(null);
+            } else
+                break;
+        while (head != tail);
 
-        for(int i=0;i!=size();i++){
-            if(tmp.getValue()==element){
-                removeAt(i);
+        Node prev = head, cur = head;
+        do {
+            if (element == cur.getValue()) {
+                prev.setNext(cur.getNext());
+                cur.getNext().setPrev(prev);
+            } else {
+                prev = cur;
             }
-        }
-
+            cur = cur.getNext();
+        } while(cur != tail);
     }
 
     @Override
     public void reverse() {
+        Node l = head, r = tail;
+        do {
+             swap(l, r);
+             if (l.getNext() == r) break;
+             l = l.getNext();
+             r = r.getPrev();
+        } while (l != r);
+    }
 
+    // 5 5 1 4 7 8
+
+    private void swap(Node a, Node b) {
+        int t = a.getValue();
+        a.setValue(b.getValue());
+        b.setValue(t);
     }
 
     public void set(int value, int position){
-        Node tmp=head;
-        for(int i=0;i<position;i++){
-            tmp=tmp.getNext();
-        }
-        tmp.setValue(value);
+        getOnPosition(position).setValue(value);
     }
 
     @Override
     public int size() {
         Node tmp=head;
-        int i;
-        for(i=0;;i++){
-            if(tmp.getNext()!=null) {
-                tmp = tmp.getNext();
-            }else return 0;
-            if(tmp==tail)break;
+        int i = 0;
+        while (tmp.getNext() != null) {
+            tmp = tmp.getNext();
+            ++i;
         }
         return i;
     }
@@ -167,7 +181,6 @@ public class MyLinkedList extends MyCollection {
         return array;
     }
 
-    @Override
     public void mergeSort() {
 
     }
@@ -178,13 +191,11 @@ public class MyLinkedList extends MyCollection {
         String str=new String();
         str+="[";
         for(int i=0;i<=size();i++){
-            str+=tmp.value;
+            str+=tmp.getValue();
             tmp=tmp.getNext();
 
             if(i!=size())str+=", ";
         }
         return str+"]";
     }
-
-
 }

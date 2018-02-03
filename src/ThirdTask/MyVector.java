@@ -1,7 +1,5 @@
 package ThirdTask;
 
-import com.sun.scenario.effect.Merge;
-
 import java.util.*;
 
 public class MyVector extends MyCollection {
@@ -174,9 +172,8 @@ public class MyVector extends MyCollection {
 
         for(k = 0, i = lo; i <= hi; ++i, ++k)
             arr[i] = temp[k];
-
-
     }
+
     void MergeSortHelper(int arr[], int lo, int hi){
         int mid;
         if(lo < hi){
