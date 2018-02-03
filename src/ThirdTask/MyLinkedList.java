@@ -186,7 +186,5 @@ public class MyLinkedList extends MyCollection {
         return str+"]";
     }
 
-    public void swap(int position1, int position2){
-        Node tmp=get(position1);
-    }
+
 }
