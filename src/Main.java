@@ -1,27 +1,65 @@
-import ThirdTask.MyCollection;
-import ThirdTask.MyLinkedList;
-import ThirdTask.MyVector;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String args[]){
-        MyLinkedList ll= new MyLinkedList();
+        Scanner in= new Scanner(System.in);
+        int hight=in.nextInt(), weight=in.nextInt(), amountOfBombs=in.nextInt();
+        int[][] array=new int[201][201];
 
-        MyCollection v = new MyVector();
-
-        for (int i = 1; i <= 10; ++i) {
-            ll.add(i * i - i);
-            v.add(i * i - i);
+        for(int i=0;i<amountOfBombs;i++){
+            array[in.nextInt()][in.nextInt()]=-1;
         }
 
-        for (int j = 0; j < 10; ++j) {
-            ll.add(j, j * j + 256);
-            v.add(j, j*j+256);
+        int[] subArray1={1,1, 1,0, 0,-1,-1,-1};
+        int[] subArray2={1,0,-1,1,-1, 1,-1, 0};
+
+        for (int i = 1; i <= weight; i++){
+            for (int j = 1; j <= hight; j++){
+                if(array[i-1][j+1] == 9 && array[i][j] != 9)  //справа сверху
+                    array[i][j]++;
+                if(array[i-1][j] == 9 && array[i][j] != 9)    //сверху
+                    array[i][j]++;
+                if(array[i-1][j-1] == 9 && array[i][j] != 9)  //сверху слева
+                    array[i][j]++;
+                if(array[i][j-1] == 9 && array[i][j] != 9)    //слева
+                    array[i][j]++;
+                if(array[i+1][j-1] == 9 && array[i][j] != 9)  //свева внизу
+                    array[i][j]++;
+                if(array[i+1][j] == 9 && array[i][j] != 9)    //внизу
+                    array[i][j]++;
+                if(array[i+1][j+1] == 9 && array[i][j] != 9)  //внизу справа
+                    array[i][j]++;
+                if(array[i][j+1] == 9 && array[i][j] != 9)    //справа
+                    array[i][j]++;
+
+
+            }
         }
 
-        System.out.println(ll);
-        System.out.println(v);
+//        for(int i=1;i<=weight;++i){
+//            for(int j=1;j<=hight;++j){
+//                for(int z=0;z<8;++z){
+//                    if(array[subArray1[z]+i][subArray2[z]+j]==-1){
+//                        array[i][j]++;
+//                    }
+//                }
+//            }
+//        }
 
-        System.out.println(ll.toString());
-        System.out.println( v.toString());
+        for(int i=1;i<=weight;++i){
+            for(int j=1;j<=hight;++j) {
+                char c= (char) (array[i][j]+48);
+                if(c=='/'){
+                    c='*';
+                }
+                if(c=='0'){
+                    c='.';
+                }
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+        in.close();
     }
 }
