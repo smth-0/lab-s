@@ -13,23 +13,23 @@ public class Main {
         int[] subArray1={1,1, 1,0, 0,-1,-1,-1};
         int[] subArray2={1,0,-1,1,-1, 1,-1, 0};
 
-        for (int i = 1; i <= weight; i++){
-            for (int j = 1; j <= hight; j++){
-                if(array[i-1][j+1] == 9 && array[i][j] != 9)  //справа сверху
+        for (int i = 1; i <= weight+1; i++){
+            for (int j = 1; j <= hight+1; j++){
+                if(array[i-1][j+1] == -1 && array[i][j] != -1)  //справа сверху
                     array[i][j]++;
-                if(array[i-1][j] == 9 && array[i][j] != 9)    //сверху
+                if(array[i-1][j] == -1 && array[i][j] != -1)    //сверху
                     array[i][j]++;
-                if(array[i-1][j-1] == 9 && array[i][j] != 9)  //сверху слева
+                if(array[i-1][j-1] == -1 && array[i][j] != -1)  //сверху слева
                     array[i][j]++;
-                if(array[i][j-1] == 9 && array[i][j] != 9)    //слева
+                if(array[i][j-1] == -1 && array[i][j] != -1)    //слева
                     array[i][j]++;
-                if(array[i+1][j-1] == 9 && array[i][j] != 9)  //свева внизу
+                if(array[i+1][j-1] == -1 && array[i][j] != -1)  //свева внизу
                     array[i][j]++;
-                if(array[i+1][j] == 9 && array[i][j] != 9)    //внизу
+                if(array[i+1][j] == -1 && array[i][j] != -1)    //внизу
                     array[i][j]++;
-                if(array[i+1][j+1] == 9 && array[i][j] != 9)  //внизу справа
+                if(array[i+1][j+1] == -1 && array[i][j] != -1)  //внизу справа
                     array[i][j]++;
-                if(array[i][j+1] == 9 && array[i][j] != 9)    //справа
+                if(array[i][j+1] == -1 && array[i][j] != -1)    //справа
                     array[i][j]++;
 
 
@@ -46,8 +46,8 @@ public class Main {
 //            }
 //        }
 
-        for(int i=1;i<=weight;++i){
-            for(int j=1;j<=hight;++j) {
+        for(int i=1;i<=weight+1;++i){
+            for(int j=1;j<hight;++j) {
                 char c= (char) (array[i][j]+48);
                 if(c=='/'){
                     c='*';
